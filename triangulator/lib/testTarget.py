@@ -10,15 +10,15 @@ from swx import Target
 # test_input4 = (8,8,90)
 # bad_input = (-5,-5,54)
 
-inputCoordsYes = '{"coords": [{"lat": -3, "lon": 3, "aob": 126, "angleUnit": "deg"}, {"lat": -3, "lon": -3, "aob": 54, "angleUnit": "deg"}, {"lat": 3, "lon": -3, "aob": 326, "angleUnit": "deg"}]}'
-inputCoordsNo = '{"coords": [{"lat": -3, "lon": 3, "aob": 126, "angleUnit": "deg"}, {"lat": -3, "lon": -3, "aob": 54, "angleUnit": "deg"}, {"lat": -5, "lon": -5, "aob": 54, "angleUnit": "deg"}]}'
+inputCordsYes = '{"cords": [{"lat": -3, "lon": 3, "aob": 126, "angleUnit": "deg"}, {"lat": -3, "lon": -3, "aob": 54, "angleUnit": "deg"}, {"lat": 3, "lon": -3, "aob": 326, "angleUnit": "deg"}]}'
+inputCordsNo = '{"cords": [{"lat": -3, "lon": 3, "aob": 126, "angleUnit": "deg"}, {"lat": -3, "lon": -3, "aob": 54, "angleUnit": "deg"}, {"lat": -5, "lon": -5, "aob": 54, "angleUnit": "deg"}]}'
 
 t = Target.TargetLoc()
 
-print(inputCoordsYes)
-targetLoc = t.locate(inputCoordsYes)
+print(inputCordsYes)
+targetLoc = t.locate(inputCordsYes)
 print(targetLoc)
 
-print(inputCoordsNo)
-targetLoc = t.locate(inputCoordsNo)
+print(inputCordsNo)
+targetLoc = t.locate(inputCordsNo)
 print(targetLoc)
