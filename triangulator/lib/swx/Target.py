@@ -5,14 +5,14 @@ import json
 class TargetLoc:
 
     # Generates new points along the line between drone and target using drones current x,y position and Line of Bearing
-    def locate(self, inputCords):
-        tc = json.loads(inputCords)
+    def locate(self, inputCoords):
+        tc = json.loads(inputCoords)
         
         # inputs are JSON Records a set of three points in the form of 'lat', 'lon' 'aob'(angle of bearing), 'angleUnit'
         # angleUnit is a string that thought be set to either 'deg' if bearing is in degrees or 'rad' if bearing is in radians
         pt = []
         ln = []
-        for p in tc["cords"]:
+        for p in tc["coords"]:
             lat_lon = (p["lat"], p["lon"], p["aob"])
             pt = self.addPoint(lat_lon, p["angleUnit"])
             ln.append(self.extendLine(lat_lon, pt))
@@ -39,7 +39,7 @@ class TargetLoc:
             return -(LOB - 90)
         elif rad_or_deg == 'rad':
             return -(LOB - (math.pi/2))
-        
+
     # Generates a second pair of x,y coordinates for line intersection
     def addPoint(self, p, rad_or_deg):
     
