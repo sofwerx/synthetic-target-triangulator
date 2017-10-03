@@ -1,14 +1,15 @@
 from __future__ import division
 import math
 import json
+from datashape.coretypes import Null
 
 class TargetLoc:
     
     # Generates new points along the line between drone and target using drones current x,y position and Line of Bearing
     def locate(self, inputCoords):
         tc = json.loads(inputCoords)
-        # read1, read2, read3, rad_or_deg
-        # read1, read2, read3 are tuples containing (lat(x-cord), lon(y-cord), bearing(in deg or rad))
+        
+        # inputs are tuples containing (lat(x-cord), lon(y-cord), bearing(in deg or rad))
         # rad_or_deg is a string that thought be set to either 'deg' in bearing is in degrees or 'rad' if bearing is in radians
         pt = []
         ln = []
@@ -22,7 +23,16 @@ class TargetLoc:
         crossing.append(self.intersection(ln[1], ln[2]))
         crossing.append(self.intersection(ln[0], ln[2]))
         
-        return self.intersectedCheck(crossing)
+        [isect, tloc] = self.intersectedCheck(crossing) 
+        
+        resp = {
+            "doIntersect": isect,
+            "targetLoc": {
+                    "lat": tloc[0],
+                    "lon": tloc[1]
+                }
+            }
+        return json.dumps(resp)
     
     # Converts Line of Bearing into Radians if LOB was given in degrees
     def LOB_to_theta(self, LOB, rad_or_deg):
@@ -85,12 +95,12 @@ class TargetLoc:
         if I1 and I2 and I3:
             if abs(I1[0] - I2[0]) < 0.3 and abs(I2[0] - I3[0]) < 0.3 and abs(I1[0] - I3[0]) < 0.3:
                 if abs(I1[1] - I2[1]) < 0.3 and abs(I2[1] - I3[1]) < 0.3 and abs(I1[1] - I3[1]) < 0.3:
-                    return True
+                    return [True, I1]
 #                     print('intersection detected: (' + str((I1[0] + I2[0] + I3[0]) / 3.0) + ', ' + str((I1[1] + I2[1] + I3[1]) / 3.0) + ')')
                 else:
-                    return False
+                    return [False, (None, None)]
             else:
-                return False
+                return [False, (None, None)]
     
         else:
-            return False
+            return [False, (None, None)]
