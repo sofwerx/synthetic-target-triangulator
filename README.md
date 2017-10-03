@@ -1,1 +1,1 @@
-# synthetic-target-area-of-interest-
+# synthetic-target-area-of-interest
