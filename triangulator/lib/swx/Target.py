@@ -25,7 +25,7 @@ class TargetLoc:
         [isect, tloc] = self.intersectedCheck(crossing) 
         
         resp = {
-            "doIntersect": isect,
+            "hasIntersect": isect,
             "targetLoc": {
                     "lat": tloc[0],
                     "lon": tloc[1]

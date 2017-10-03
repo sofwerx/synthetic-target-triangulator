@@ -1,0 +1,8 @@
+
+.project
+
+.pydevproject
+
+*.sqlite3
+
+*.pyc
