@@ -1,7 +1,6 @@
 from __future__ import division
 import math
 import json
-from datashape.coretypes import Null
 
 class TargetLoc:
     
