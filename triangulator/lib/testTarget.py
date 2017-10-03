@@ -19,6 +19,6 @@ print(inputCoordsYes)
 targetLoc = t.locate(inputCoordsYes)
 print(targetLoc)
 
-print(inputCordsNo)
-targetLoc = t.locate(inputCordsNo)
+print(inputCoordsNo)
+targetLoc = t.locate(inputCoordsNo)
 print(targetLoc)
