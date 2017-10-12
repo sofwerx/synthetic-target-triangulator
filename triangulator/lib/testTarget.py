@@ -1,11 +1,17 @@
+##########################################################################
+# The purpose of this file is to provide accurate test data for the
+# Target.py file.
+##########################################################################
+
+
 from swx import Target
 
 inputCoordsYes = '{"coords": [{"lat": -3, "lon": 3, "aob": 126, "angleUnit": "deg"}, {"lat": -3, "lon": -3, "aob": 54, "angleUnit": "deg"}, {"lat": 3, "lon": -3, "aob": 326, "angleUnit": "deg"}]}'
 inputCoordsNo = '{"coords": [{"lat": -3, "lon": 3, "aob": 126, "angleUnit": "deg"}, {"lat": -3, "lon": -3, "aob": 54, "angleUnit": "deg"}, {"lat": -5, "lon": -5, "aob": 54, "angleUnit": "deg"}]}'
 
-#Coordinates Taken From SWX Parking Lot (10 - 15 Meters Apart) - Target Actual Values {lat: 27.957047, lon: -82.436344}
-#Current Code Generates Values {lat:27.95696337783232, lon: -82.43607217387613}
-#lat varies by ~0.00008, lon varies by ~.000027
+# Coordinates Taken From SWX Parking Lot (10 - 15 Meters Apart) - Target Actual Values {lat: 27.957047, lon: -82.436344}
+# Current Code Generates Values {lat:27.95696337783232, lon: -82.43607217387613}
+# lat varies by ~0.00008, lon varies by ~.000027
 ###########################################################################
 #                      Approximate DRONE FORMATION
 #
@@ -22,9 +28,9 @@ inputCoordsNo = '{"coords": [{"lat": -3, "lon": 3, "aob": 126, "angleUnit": "deg
 ###########################################################################
 inputCoordsSWXParkingLot = '{"coords": [{"lat": 27.957261, "lon": -82.436587, "aob": 134.91444444, "angleUnit": "deg"}, {"lat": 27.956774, "lon": -82.436587, "aob": 38.17583333, "angleUnit": "deg"}, {"lat": 27.957050, "lon": -82.435950, "aob": 269.50611111, "angleUnit": "deg"}]}'
 
-#Coordinates Taken From Camp Nou (Soccer Stadium, 100 Meters Apart) Barcelona, Spain - Target Actual Values {lat:41.381009, lon: 2.122952}
-#Current Code Generates Values {lat: 41.38118484439955, lon: 2.1124399032619716}
-#lat varies by ~0.00017584, lon varies by ~0.010512
+# Coordinates Taken From Camp Nou (Soccer Stadium, 100 Meters Apart) Barcelona, Spain - Target Actual Values {lat:41.381009, lon: 2.122952}
+# Current Code Generates Values {lat: 41.38118484439955, lon: 2.1124399032619716}
+# lat varies by ~0.00017584, lon varies by ~0.010512
 ############################################################################
 #                     Approximate Drone Formation
 #
@@ -54,9 +60,9 @@ inputCoordsSpain= '{"coords": [{"lat": 41.381437, "lon": 2.122948, "aob": 179.59
 ############################################################################
 inputCoordsRussia= '{"coords": [{"lat": 55.766761, "lon": 37.614236, "aob": 147.84055556, "angleUnit": "deg"}, {"lat": 55.766759, "lon": 37.614359, "aob": 201.83166667, "angleUnit": "deg"}, {"lat": 55.766756, "lon": 37.614496, "aob": 238.67416667, "angleUnit": "deg"}]}'
 
-#Coordinates Taken From Buenos Aires, Argentina (Few Blocks Apart) - Target Actual Values {lat:-34.605027, lon: -58.437577}
-#Current Code Generates Values {lat: -34.6108186539048, lon: -58.43099820355034}
-#lat varies by ~0.0057916539, lon varies by ~0.0065787965
+# Coordinates Taken From Buenos Aires, Argentina (Few Blocks Apart) - Target Actual Values {lat:-34.605027, lon: -58.437577}
+# Current Code Generates Values {lat: -34.6108186539048, lon: -58.43099820355034}
+# lat varies by ~0.0057916539, lon varies by ~0.0065787965
 ############################################################################
 #                     Approximate Drone Formation
 #
@@ -73,9 +79,9 @@ inputCoordsRussia= '{"coords": [{"lat": 55.766761, "lon": 37.614236, "aob": 147.
 ############################################################################
 inputCoordsArgentina= '{"coords": [{"lat": -34.608330, "lon": -58.434057, "aob": 318.74361111, "angleUnit": "deg"}, {"lat": -34.607676, "lon": -58.433221, "aob": 306.45750000, "angleUnit": "deg"}, {"lat": -34.606617, "lon": -58.432920, "aob": 292.52777778, "angleUnit": "deg"}]}'
 
-#Coordinates Taken From Sydney, Australia (Few Meters Apart) - Target Actual Values {lat: -33.905704, lon: 151.186705}
-#Current Code Generates Values {lat: -33.90544260723012, lon: 151.19164649826962}
-#lat varies by ~0.00026139, lon varies by ~0.0049414
+# Coordinates Taken From Sydney, Australia (Few Meters Apart) - Target Actual Values {lat: -33.905704, lon: 151.186705}
+# Current Code Generates Values {lat: -33.90544260723012, lon: 151.19164649826962}
+# lat varies by ~0.00026139, lon varies by ~0.0049414
 ############################################################################
 #                     Approximate Drone Formation
 #
@@ -107,7 +113,7 @@ inputCoordsAustralia= '{"coords": [{"lat": -33.905685, "lon": 151.186700, "aob":
 ############################################################################
 inputCoordsBadAustralia= '{"coords": [{"lat": -33.905685, "lon": 151.186700, "aob": 167.67944444, "angleUnit": "deg"}, {"lat": -33.905689, "lon": 151.186706, "aob": 183.16694444, "angleUnit": "deg"}, {"lat": -33.905772, "lon": 151.186700, "aob": 183.49222222, "angleUnit": "deg"}]}'
 
-##################### NON-INTERSECTING AUSTRALIA COORDINATES: Took drone 3 from australia and rotated it 90 degrees so the lines intersect too far away from one another
+##################### NON-INTERSECTING AUSTRALIA COORDINATES: Took drone 3 from australia set LOB same as drone 1
 # Notes: Threshold for accuracy currently set at .003 degrees.  This will still return a value due to the fact that
 # the original Australia coordinates are only a few meters away.
 # Accuracy not currently precise enough to see that drones are not currently looking at the same target
@@ -121,9 +127,9 @@ inputCoordsBadAustralia= '{"coords": [{"lat": -33.905685, "lon": 151.186700, "ao
 #
 #                             3      t2
 ############################################################################
-inputCoordsNonIntersectAustralia= '{"coords": [{"lat": -33.905685, "lon": 151.186700, "aob": 167.67944444, "angleUnit": "deg"}, {"lat": -33.905689, "lon": 151.186706, "aob": 183.16694444, "angleUnit": "deg"}, {"lat": -33.905772, "lon": 151.186700, "aob": 93.49222222, "angleUnit": "deg"}]}'
+inputCoordsNonIntersectAustralia= '{"coords": [{"lat": -33.905685, "lon": 151.186700, "aob": 167.67944444, "angleUnit": "deg"}, {"lat": -33.905689, "lon": 151.186706, "aob": 183.16694444, "angleUnit": "deg"}, {"lat": -33.905772, "lon": 151.186700, "aob": 167.67944444, "angleUnit": "deg"}]}'
 
-###################### NON-INTERSECTING ARGENTINA COORDINATES: Took drone 3 and rotated it 90 degrees
+###################### DIFFERENT TARGETS ARGENTINA COORDINATES: Took drone 3 and rotated it 90 degrees as if it was looking at the wrong target
 ############################################################################
 #                     Approximate Drone Formation
 #
@@ -138,8 +144,25 @@ inputCoordsNonIntersectAustralia= '{"coords": [{"lat": -33.905685, "lon": 151.18
 #
 #                              1
 ############################################################################
-inputCoordsNonIntersectArgentina= '{"coords": [{"lat": -34.608330, "lon": -58.434057, "aob": 318.74361111, "angleUnit": "deg"}, {"lat": -34.607676, "lon": -58.433221, "aob": 306.45750000, "angleUnit": "deg"}, {"lat": -34.606617, "lon": -58.432920, "aob": 202.52777778, "angleUnit": "deg"}]}'
+inputCoordsDiffTargetArgentina= '{"coords": [{"lat": -34.608330, "lon": -58.434057, "aob": 318.74361111, "angleUnit": "deg"}, {"lat": -34.607676, "lon": -58.433221, "aob": 306.45750000, "angleUnit": "deg"}, {"lat": -34.606617, "lon": -58.432920, "aob": 202.52777778, "angleUnit": "deg"}]}'
 
+################## > 360 AND NEGATIVE ANGLES: Drone 1 angle > 360, Drone 2 angle negative
+# Coordinates Taken From SWX Parking Lot (10 - 15 Meters Apart) - Target Actual Values {lat: 27.957047, lon: -82.436344}
+###########################################################################
+#                      Approximate DRONE FORMATION
+#
+#               1
+#
+#
+#
+#                                t                    3
+#
+#
+#
+#               2
+#
+###########################################################################
+inputCoordsAnglesSWXParkingLot = '{"coords": [{"lat": 27.957261, "lon": -82.436587, "aob": 494.91444444, "angleUnit": "deg"}, {"lat": 27.956774, "lon": -82.436587, "aob": -321.8241667, "angleUnit": "deg"}, {"lat": 27.957050, "lon": -82.435950, "aob": 269.50611111, "angleUnit": "deg"}]}'
 
 
 
@@ -181,6 +204,10 @@ print(inputCoordsNonIntersectAustralia)
 targetLoc = t.locate(inputCoordsNonIntersectAustralia)
 print(targetLoc)
 
-print(inputCoordsNonIntersectArgentina)
-targetLoc = t.locate(inputCoordsNonIntersectArgentina)
+print(inputCoordsDiffTargetArgentina)
+targetLoc = t.locate(inputCoordsDiffTargetArgentina)
+print(targetLoc)
+
+print(inputCoordsAnglesSWXParkingLot)
+targetLoc = t.locate(inputCoordsAnglesSWXParkingLot)
 print(targetLoc)
