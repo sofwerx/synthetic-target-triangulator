@@ -2,7 +2,6 @@ TMPDIR := $(shell mktemp -d)
 
 requirements.txt: */*.py */*/*.py */*/*/*.py
 	pip install virtualenv pipreqs
-	pip install virtualenv pipreqs
 	pipreqs . --force
 	virtualenv $(TMPDIR)/cybertick
 	[ -n "$(TMPDIR)" -a -d $(TMPDIR) ]
