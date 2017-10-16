@@ -1,0 +1,3 @@
+[submodule "triangulator/synthetic-target-triangulator-library"]
+	path = triangulator/synthetic-target-triangulator-library
+	url = https://github.com/sofwerx/synthetic-target-triangulator-library
