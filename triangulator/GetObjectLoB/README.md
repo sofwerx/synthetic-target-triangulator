@@ -1,1 +1,0 @@
-Object recognition + LoB
