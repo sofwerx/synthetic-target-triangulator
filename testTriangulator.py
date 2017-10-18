@@ -4,7 +4,7 @@
 ##########################################################################
 
 
-from swx import Target
+from swx import Triangulator
 
 inputCoordsYes = '{"coords": [{"lat": -3, "lon": 3, "aob": 126, "angleUnit": "deg"}, {"lat": -3, "lon": -3, "aob": 54, "angleUnit": "deg"}, {"lat": 3, "lon": -3, "aob": 326, "angleUnit": "deg"}]}'
 inputCoordsNo = '{"coords": [{"lat": -3, "lon": 3, "aob": 126, "angleUnit": "deg"}, {"lat": -3, "lon": -3, "aob": 54, "angleUnit": "deg"}, {"lat": -5, "lon": -5, "aob": 54, "angleUnit": "deg"}]}'
@@ -166,7 +166,7 @@ inputCoordsAnglesSWXParkingLot = '{"coords": [{"lat": 27.957261, "lon": -82.4365
 
 
 
-t = Target.TargetLoc()
+t = Triangulator.TargetLoc()
 
 print(inputCoordsYes)
 targetLoc = t.locate(inputCoordsYes)
