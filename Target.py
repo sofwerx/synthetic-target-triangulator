@@ -42,7 +42,6 @@ class TargetLoc:
 
     # Generates a second pair of x,y coordinates for line intersection
     def addPoint(self, p, rad_or_deg):
-    
         theta = self.LOB_to_theta(p[2], rad_or_deg)
         # Will only convert theta to radians if using degrees - math.tan requires radians
         if rad_or_deg == 'deg':
@@ -88,8 +87,8 @@ class TargetLoc:
         I3 = intersectPoints[2]
         
         if I1 and I2 and I3:
-            if abs(I1[0] - I2[0]) < 0.3 and abs(I2[0] - I3[0]) < 0.3 and abs(I1[0] - I3[0]) < 0.3:
-                if abs(I1[1] - I2[1]) < 0.3 and abs(I2[1] - I3[1]) < 0.3 and abs(I1[1] - I3[1]) < 0.3:
+            if abs(I1[0] - I2[0]) < 0.03 and abs(I2[0] - I3[0]) < 0.03 and abs(I1[0] - I3[0]) < 0.03:
+                if abs(I1[1] - I2[1]) < 0.03 and abs(I2[1] - I3[1]) < 0.03 and abs(I1[1] - I3[1]) < 0.03:
                     midpoint = ((I1[0] + I2[0] + I3[0])/3, (I1[1] + I2[1] + I3[1])/3)
                     return [True, midpoint]
                 else:
