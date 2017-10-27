@@ -5,8 +5,7 @@ import json
 class TargetLoc:
 
     # Generates new points along the line between drone and target using drones current x,y position and Line of Bearing
-    def locate(self, inputCoords):
-        tc = json.loads(inputCoords)
+    def locate(self, tc):
         
         # inputs are JSON Records a set of three points in the form of 'lat', 'lon' 'aob'(angle of bearing), 'angleUnit'
         # angleUnit is a string that thought be set to either 'deg' if bearing is in degrees or 'rad' if bearing is in radians
@@ -31,7 +30,7 @@ class TargetLoc:
                     "lon": tloc[1]
                 }
             }
-        return json.dumps(resp)
+        return resp
     
     # Converts Line of Bearing into Radians if LOB was given in degrees
     def LOB_to_theta(self, LOB, rad_or_deg):
